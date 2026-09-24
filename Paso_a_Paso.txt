@@ -1,0 +1,62 @@
+Guía rápida: Instalación y ejecución del proyecto Django
+Paso a paso
+1. Instalar Python 3.12
+winget install Python.Python.3.12
+Instala Python 3.12 en el computador mediante Windows Package Manager.
+2. Comprobar Python
+py -3.12 --version
+Verifica que Python 3.12 quedó instalado correctamente y muestra su versión.
+3. Entrar al Escritorio
+cd Desktop
+Cambia la ubicación de CMD al Escritorio de Windows.
+4. Entrar a la carpeta de trabajo
+cd 24-09-2026
+Entra a la carpeta creada para trabajar con el proyecto.
+5. Clonar el proyecto
+git clone https://github.com/ericRailef/App-Tareas.git
+Descarga desde GitHub una copia del proyecto y su historial Git.
+6. Entrar al proyecto
+cd App-Tareas
+Entra en la carpeta del proyecto que acaba de ser clonada.
+7. Crear el entorno virtual
+py -3.12 -m venv venv
+Crea un entorno virtual llamado venv para mantener aisladas las librerías de este proyecto.
+8. Activar el entorno virtual
+venv\Scripts\activate
+Activa el entorno virtual. Si funciona, aparecerá (venv) al inicio de la línea de comandos.
+9. Instalar dependencias
+pip install -r requirements.txt
+Instala automáticamente las librerías y versiones indicadas en requirements.txt.
+10. Comprobar Django
+python manage.py check
+10.5 migrar database
+python manage.py migrate
+Revisa la configuración del proyecto Django y detecta posibles problemas.
+12. Ejecutar el servidor
+python manage.py runserver
+Inicia el servidor local de Django para poder abrir el proyecto en el navegador.
+Dependencias del proyecto
+
+El archivo requirements.txt contiene:
+asgiref==3.12.1
+Django==5.0.14
+mysqlclient==2.2.8
+sqlparse==0.6.0
+tzdata==2026.3
+
+Resumen de comandos
+winget install Python.Python.3.12
+py -3.12 --version
+git --version
+cd Desktop
+cd 24-09-2026
+git clone https://github.com/ericRailef/App-Tareas.git
+cd App-Tareas
+py -3.12 -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py check
+python manage.py migrate
+python manage.py runserver
+Resultado esperado
+Al finalizar, el proyecto debe estar dentro de la carpeta 24-09-2026, con su entorno virtual venv creado y activado. El servidor Django debe poder iniciarse con python manage.py runserver y abrirse en http://127.0.0.1:8000/.
