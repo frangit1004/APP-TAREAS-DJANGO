@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar tarea</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .panel {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .confirmacion {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .tarea {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tarea h2 {
+            margin-top: 0;
+        }
+
+        .acciones {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .boton.danger {
+            background-color: #b22222;
+        }
+
+        .boton.danger:hover {
+            background-color: #8b1a1a;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 12px;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>🗑️ Eliminar tarea</h1>
+
+    <div class="panel">
+        <p class="confirmacion">
+            ¿Estás seguro de que quieres eliminar esta tarea?
+        </p>
+
+        <div class="tarea">
+            <h2>{{ tarea.titulo }}</h2>
+            <p>{{ tarea.descripcion }}</p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="acciones">
+                <button type="submit" class="boton danger">Sí, eliminar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="acciones">
+        <a href="/" class="volver">← Volver al inicio</a>
+    </div>
+
+</div>
+
+</body>
+</html>
